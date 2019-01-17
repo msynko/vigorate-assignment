@@ -5,8 +5,7 @@
   }
 header {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2;
+  grid-template-columns: 1fr 1fr;
   margin: 0 15px;
   background-color: #003366;
   color: white;
@@ -14,19 +13,23 @@ header {
   padding: 30px 30px;
   font-weight: bold;
   }
+
 header>p {
   padding: 0;
   margin: 0;
   font-size: 30px;
+  grid-column-start: 1;
   }
+
 header>ul {
   text-align: right;
   list-style-type: none;
-  font-weight: normal;
-  display: inline;
-  }
+  grid-column-start: 2;
+}
+
 header>ul>li {
-  display: inline;
+  display: inline-block;
+  padding: 0 5px;
   }
 
 .fa{
@@ -34,15 +37,18 @@ header>ul>li {
   border-radius: 60px;
   padding: 0.5em 0.6em;
   }
+
 .fa-facebook {
   background: white;
   color: #003366;
 }
+
 .fa-twitter{
   background: white;
   color:  #003366;
   size: 20px;
 }
+
 .fa-rss {
   background: white;
   color: #003366;
@@ -59,6 +65,7 @@ section>p{
 section>ul{
   padding: 20px 60px;
 }
+
 section>ul>li{
   padding: 5px;
 }
@@ -119,26 +126,32 @@ section>ul>li{
   padding: 10px;
   color:white;
 }
+
 .second_tbl .price{
   font-size: 40px;
 }
+
 .second_tbl .middle{
   background-color: #FFF2BD;
   padding: 10px;
 }
+
 .second_tbl .plan{
   padding: 10px;
   font-size: 20px;
   font-weight: bolder;
 }
+
 .second_tbl .bottom >p{
   padding: 10px;
   background-color: #FFF2BD;
 }
+
 .submit{
   background-color: lightgrey;
   padding: 20px;
 }
+
 button {
   border: none;
   color: white;
@@ -147,22 +160,26 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  }
-  .basic {
-      background-color: #69C1E0;
-  }
-  .unlimited{
-    background-color: #FFDB43;
-  }
-  .contact_bttn{
+}
+
+.basic {
+  background-color: #69C1E0;
+}
+
+.unlimited{
+  background-color: #FFDB43;
+}
+
+.contact_bttn{
     background-color: #78C771;
     border-radius: 15px 15px 15px 15px;
-  }
+}
 
 .contacts{
   text-align: center;
   margin: 30px;
 }
+
 .contacts p{
   padding: 20px;
   font-size: 25px;
@@ -178,36 +195,47 @@ footer{
   padding: 30px;
 }
 
-@media screen and (min-width : 321px) {
-  header > p {
-     text-align: center;
-     padding-bottom: 10px;
-     border-bottom: 3px solid white;
-     grid-row-start: 1;
-   }
+  @media screen and (max-width : 700px) {
 
-  .icon_container {
-     grid-row-start: 2;
-     text-align: center;
-     padding-top: 20px;
-   }
-  .icon_container>li{
+    header {
+      grid-template-columns: 1fr;
+    }
+    header > p {
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 3px solid white;
+      grid-row-start: 1;
+    }
+
+    .icon_container {
+      grid-row-start: 2;
+      grid-column-start: 1;
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    .icon_container>li{
       padding: 0 5px;
     }
-  .container{
-    grid-template-columns: 1fr;
+
+    .container{
+      grid-template-columns: 1fr;
+    }
+
+    .first_tbl{
+      grid-column-start: 1;
+    }
+
+    .second_tbl{
+      grid-column-start: 1;
+    }
+
+    .contact_bttn{
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .contacts{
+      margin:0 15px;
+    }
   }
-  .first_tbl{
-    grid-column-start: 1;
-  }
-  .second_tbl{
-    grid-column-start: 1;
-  }
- .contact_bttn{
-   width: 100%;
-   border-radius: 0;
- }
- .contacts{
-   margin:0 15px;
- }
-}
